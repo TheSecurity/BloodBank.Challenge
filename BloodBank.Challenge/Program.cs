@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BloodBank.Challenge
+namespace BloodBank.Console
 {
     class Program
     {
