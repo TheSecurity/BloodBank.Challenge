@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BloodBank.Core\BloodBank.Core.csproj" />
+    <ProjectReference Include="..\BloodBank.Storage\BloodBank.Storage.csproj" />
   </ItemGroup>
 
 </Project>
