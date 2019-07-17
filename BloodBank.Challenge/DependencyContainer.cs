@@ -1,4 +1,5 @@
 ﻿using System;
+using BloodBank.Core.DataStorage;
 using BloodBank.Core.Services;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +11,7 @@ namespace BloodBank.ConsoleApp
             => new ServiceCollection()
                 .AddSingleton<UserInterface>()
                 .AddSingleton<IPersonService, PersonService>()
+                .AddSingleton<IDataStorage>()
                 .BuildServiceProvider();
     }
 }
