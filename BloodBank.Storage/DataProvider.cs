@@ -1,12 +1,9 @@
-﻿using System;
-using System.Data.Common;
-using System.Linq;
-using BloodBank.Core.DataStorage;
+﻿using BloodBank.Core.DataStorage;
 using LiteDB;
 
 namespace BloodBank.Storage
 {
-    public class Provider : IDataProvider
+    public class DataProvider : IDataProvider
     {
         public T GetEntity<T>(string tableName, ulong id)
         {

@@ -3,7 +3,7 @@ using LiteDB;
 
 namespace BloodBank.Storage
 {
-    public class Storage : IDataStorage
+    public class DataStorage : IDataStorage
     {
         public void Add<T>(string tableName, T data)
         {
