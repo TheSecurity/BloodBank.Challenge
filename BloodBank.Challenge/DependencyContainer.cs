@@ -12,8 +12,8 @@ namespace BloodBank.ConsoleApp
             => new ServiceCollection()
                 .AddSingleton<UserInterface>()
                 .AddSingleton<IPersonService, PersonService>()
-                .AddSingleton<IDataStorage, Storage.Storage>()
-                .AddSingleton<IDataProvider, Provider>()
+                .AddSingleton<IDataStorage, DataStorage>()
+                .AddSingleton<IDataProvider, DataProvider>()
                 .BuildServiceProvider();
     }
 }
