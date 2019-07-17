@@ -12,6 +12,7 @@ namespace BloodBank.ConsoleApp
                 .AddSingleton<UserInterface>()
                 .AddSingleton<IPersonService, PersonService>()
                 .AddSingleton<IDataStorage>()
+                .AddSingleton<IDataProvider>()
                 .BuildServiceProvider();
     }
 }
