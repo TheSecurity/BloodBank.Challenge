@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace BloodBank.Console
+namespace BloodBank.ConsoleApp
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public async void Main()
         {
-            Console.WriteLine("Hello World!");
+            var services = DependencyContainer.SetupServiceProvider;
+            await services.GetRequiredService<UserInterface>().Initialize();
         }
+        
     }
 }
