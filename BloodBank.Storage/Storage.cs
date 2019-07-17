@@ -1,27 +1,34 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using BloodBank.Core.DataStorage;
+﻿using BloodBank.Core.DataStorage;
 using LiteDB;
 
 namespace BloodBank.Storage
 {
     public class Storage : IDataStorage
     {
-        public void Serialize<T>(string tableName, List<T> objects)
+        public void Add<T>(string tableName, T data)
         {
             using (var database = new LiteDatabase("@BloodBank.db"))
             {
-                var data =  database.GetCollection<T>(tableName);
-                var validData = objects.Except(data.FindAll().ToList());
-                data.InsertBulk(validData);
+                var collection = database.GetCollection<T>(tableName);
+                collection.Insert(data);
             }
         }
 
-        public List<T> Deserialize<T>(string tableName, T objects)
+        public void Remove<T>(string tableName, ulong id)
         {
             using (var database = new LiteDatabase("@BloodBank.db"))
             {
-                return database.GetCollection<T>(tableName).FindAll().ToList();
+                var collection = database.GetCollection<T>(tableName);
+                collection.Delete(tableName);
+            }
+        }
+
+        public void Update<T>(string tableName, T data)
+        {
+            using (var database = new LiteDatabase("@BloodBank.db"))
+            {
+                var collection = database.GetCollection<T>(tableName);
+                collection.Update(data);
             }
         }
     }

@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-
-namespace BloodBank.Core.DataStorage
+﻿namespace BloodBank.Core.DataStorage
 {
     public interface IDataStorage
     {
-        void Serialize<T>(string path, List<T> type);
-        List<T> Deserialize<T>(string tableName, T type);
+        void Add<T>(string tableName, T data);
+        void Remove<T>(string tableName, ulong id);
+        void Update<T>(string tableName, T data);
     }
 }
