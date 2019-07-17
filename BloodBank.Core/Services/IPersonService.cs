@@ -4,9 +4,8 @@ namespace BloodBank.Core.Services
 {
     public interface IPersonService
     {
-        Person GetPerson();
-        void SavePerson();
-        void AddPerson();
-        uint GetPersonCount();
+        Person GetPerson(ulong id);
+        void AddPerson(Person person);
+        int GetPersonCount();
     }
 }
