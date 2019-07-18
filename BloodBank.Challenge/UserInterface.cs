@@ -50,7 +50,7 @@ namespace BloodBank.ConsoleApp
                         break;
                     case "2": GetPersonDialog();
                         break;
-                    case "3": _personService.GetPersonCount();
+                    case "3": Console.WriteLine($"Person count: {_personService.GetPersonCount()}");
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
