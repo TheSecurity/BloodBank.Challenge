@@ -14,6 +14,7 @@ namespace BloodBank.ConsoleApp
                 .AddSingleton<IPersonService, PersonService>()
                 .AddSingleton<IDataStorage, DataStorage>()
                 .AddSingleton<IDataProvider, DataProvider>()
+                .AddSingleton<PersonPropertyValidator>()
                 .BuildServiceProvider();
     }
 }
