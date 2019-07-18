@@ -1,5 +1,4 @@
-﻿using System;
-using BloodBank.Core.DataStorage;
+﻿using BloodBank.Core.DataStorage;
 using BloodBank.Core.Entities;
 
 namespace BloodBank.Core.Services
@@ -19,8 +18,8 @@ namespace BloodBank.Core.Services
         public Person GetPerson(ulong id)
             => _dataProvider.GetEntity<Person>(TableName, id);
 
-        public void AddPerson(Person person)
-            => _dataStorage.Add(TableName, person);
+        public void AddPerson(Person person, ulong id)
+            => _dataStorage.Add(TableName, person, id);
         
 
         public int GetPersonCount()

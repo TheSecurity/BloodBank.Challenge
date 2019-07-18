@@ -5,12 +5,12 @@ namespace BloodBank.Storage
 {
     public class DataStorage : IDataStorage
     {
-        public void Add<T>(string tableName, T data)
+        public void Add<T>(string tableName, T data, ulong id)
         {
             using (var database = new LiteDatabase("@BloodBank.db"))
             {
                 var collection = database.GetCollection<T>(tableName);
-                collection.Insert(data);
+                collection.Insert(id,data);
             }
         }
 
